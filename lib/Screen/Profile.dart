@@ -167,64 +167,78 @@ class _ProfileState extends State<Profile> {
                           child: Center(
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                LoadingButton(
+                                FlatButton.icon(
                                     onPressed: () {
-                                      if (_formkey_Profile.currentState
-                                          .validate()) {
-                                        if (button_state == false) {
-                                          button_state = true;
-                                          setState(() {});
-                                          GO();
-                                        }
-                                      }
+                                      LogOut(context);
                                     },
-                                    backgroundColor: Themes.Primary_Lite,
-                                    isLoading: button_state,
-                                    loadingWidget: SizedBox(
-                                      height: 50,
-                                      width: 50,
-                                      child: Center(
-                                        child: CircularProgressIndicator(
-                                          valueColor:
-                                              AlwaysStoppedAnimation<Color>(
-                                                  Colors.white),
+                                    icon: Icon(
+                                      Icons.all_out,
+                                      color: Themes.Icon_Color,
+                                    ),
+                                    label: Text(
+                                      'LOGOUT',
+                                      style: textStyle,
+                                    )),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(right: Dimension.Padding),
+                                  child: LoadingButton(
+                                      onPressed: () {
+                                        if (_formkey_Profile.currentState
+                                            .validate()) {
+                                          if (button_state == false) {
+                                            button_state = true;
+                                            setState(() {});
+                                            GO();
+                                          }
+                                        }
+                                      },
+                                      backgroundColor: Themes.Primary_Lite,
+                                      isLoading: button_state,
+                                      loadingWidget: SizedBox(
+                                        height: 50,
+                                        width: 50,
+                                        child: Center(
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                                    Colors.white),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    child: Container(
-                                      height: 35,
-                                      width: MediaQuery.of(context).size.width -
-                                          84,
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "Update",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: Dimension.Text_Size,
+                                      child: Container(
+                                        height: 35,
+                                        width: 120,
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          "Update",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: Dimension.Text_Size,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    decoration: BoxDecoration(
-                                        color: Themes.Primary_Lite,
-                                        borderRadius: BorderRadius.circular(5),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color:
-                                                  Themes.Primary_Lite.withAlpha(
-                                                      Dimension.Alpha),
-                                              offset: Offset(1, -2),
-                                              blurRadius: 5),
-                                          BoxShadow(
-                                              color:
-                                                  Themes.Primary_Lite.withAlpha(
-                                                      Dimension.Alpha),
-                                              offset: Offset(-1, 2),
-                                              blurRadius: 5)
-                                        ])),
+                                      decoration: BoxDecoration(
+                                          color: Themes.Primary_Lite,
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: Themes.Primary_Lite
+                                                    .withAlpha(Dimension.Alpha),
+                                                offset: Offset(1, -2),
+                                                blurRadius: 5),
+                                            BoxShadow(
+                                                color: Themes.Primary_Lite
+                                                    .withAlpha(Dimension.Alpha),
+                                                offset: Offset(-1, 2),
+                                                blurRadius: 5)
+                                          ])),
+                                ),
                               ],
                             ),
                           ),

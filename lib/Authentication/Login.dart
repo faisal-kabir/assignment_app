@@ -39,6 +39,11 @@ class Show_Login extends State<Login> {
     return Scaffold(
         key: _scaffoldKey_login,
         backgroundColor: Themes.Background,
+        appBar: AppBar(
+          title: Text("Login"),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+        ),
         body: Container(
           padding: EdgeInsets.only(
               left: Dimension.Padding, right: Dimension.Padding),

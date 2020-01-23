@@ -8,6 +8,6 @@ class Themes {
   static Color Background = Color(0xFFFFFFFF);
 
   static Color Text_Color = Color(0xFF2B2B2B);
-  static Color Icon_Color = Color(0xFFFFFFFF);
+  static Color Icon_Color = Color(0xFF2B2B2B);
   static Color Text_Background = Color(0xFF2B2B2B);
 }
